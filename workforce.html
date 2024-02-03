@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entering the workforce</title>
+    <!-- Link Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to own stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Questionnaire</h1>
+        <div id="questionContainer">
+            <!-- Questions will be inserted here dynamically -->
+        </div>
+
+        <div id="result" style="display: none;">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        var questions = [
+            { question: "Are you going to be employed by a company?", options: ["Yes","No","Don't know"] },
+            { question: "Will you do any work for yourself?", options: ["Yes","No","Don't know"] },
+            { question: "Do you intend to do any savings or investments?", options: ["Yes","No","Don't know"] }
+            // Add more questions here
+        ];
+
+        var answers = [];
+
+        var currentQuestionIndex = 0;
+
+        displayQuestion();
+
+        function displayQuestion() {
+            var questionContainer = document.getElementById('questionContainer');
+            questionContainer.innerHTML = `
+                <h2>${questions[currentQuestionIndex].question}</h2>
+                ${questions[currentQuestionIndex].options.map(option => `
+                    <input type="radio" id="${option}" name="answer" value="${option}">
+                    <label for="${option}">${option}</label><br>
+                `).join('')}
+                <button onclick="submitAnswer()">Next</button>
+            `;
+        }
+
+        function submitAnswer() {
+            var selectedOption = document.querySelector('input[name="answer"]:checked');
+            if (!selectedOption) {
+                alert("Please select an answer.");
+                return;
+            }
+            answers.push(selectedOption.value);
+
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            } else {
+                displayResult();
+            }
+        }
+
+        function displayResult() {
+            var resultContainer = document.getElementById('result');
+            resultContainer.innerHTML = `
+                <h2>Thank you!</h2>
+                <p>Here are your answers:</p>
+                <ul>
+                    ${questions.map((question, index) => `<li>${question.question}: ${answers[index]}</li>`).join('')}
+                </ul>
+            `;
+            resultContainer.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
