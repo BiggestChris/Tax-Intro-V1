@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to own stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1>Tax Intro</h1>
+    </div>
+    <div>
+        <h2>
+            Which life-stage are you at?
+        </h2>
+        <form id="lifeStageForm">
+            <input type="radio" id="student" name="life-stage" value="student">
+            <label for="student">Student</label><br>
+            
+            <input type="radio" id="workforce" name="life-stage" value="workforce">
+            <label for="workforce">Workforce</label><br>
+            
+            <input type="radio" id="retirement" name="life-stage" value="retirement">
+            <label for="retirement">Retirement</label><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('lifeStageForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get the selected life stage
+            var selectedLifeStage = document.querySelector('input[name="life-stage"]:checked').value;
+            
+            // Redirect based on the selected life stage
+            if (selectedLifeStage === 'student') {
+                window.location.href = 'student.html';
+            } else if (selectedLifeStage === 'workforce') {
+                window.location.href = 'workforce.html';
+            } else if (selectedLifeStage === 'retirement') {
+                window.location.href = 'retirement.html';
+            }
+        });
+    </script>
+</body>
+
+
+</html>
