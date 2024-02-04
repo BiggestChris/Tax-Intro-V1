@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee</title>
+    <!-- Link Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Link to own stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Self-employed</h1>
+        <p>
+            Right, you will be undertaking self-employed work. This means you will need to fill out a self-assesment tax return, and you will also be responsible for keeping records of your income and business expenses (as some of those can be claimed back to reduce your tax bill).
+            Make sure you have somewhere to store that information, whether you want to do it physically, or digitally is up to you. There are many tools available now to help you store these records digitally as well.
+        </p>
+
+        <hr>
+
+        <h2>Important points</h2>
+        <ol>
+            <li>
+                <b>As you are self-employed, you are expected to keep track and ring-fence the money you earn through income that will need to be paid for tax</b>
+                <p>For every £1 you earn, you will likely need to pay tax on that, so you are responsible for keeping track of that, because that money will be needed to pay HMRC when the time comes. Accidentally spending it is not a valid defence for not being able to pay in the eyes of the law
+                    (that actually can be considered Tax Evasion).</p>
+            </li>
+            <li>
+                <b>Register for self-assessment and get your UTR number</b>
+                <p>As you will be filling in a self-assessment each year, <a href="https://www.gov.uk/register-for-self-assessment" target="_blank">go ahead and register now</a>! In doing so, you'll get your UTR (Unique Tax Reference) number, which is useful in quoting in all your invoices.</p>
+            </li>
+            <li>
+                <b>The tax year runs from 6th April one year to 5th April the following year</b>
+                <p>Yes, it may seem like a slightly strange cut-off, but this is what is set in law. This means that you need to track all your earnings between this time period for any one year.</p>
+            </li>
+            <li>
+                <b>You will need to file your self-assessment by 31st January for the preceding year</b>
+                <p>For example, for the tax year of 6th April 2023 to 5th April 2024, you will need to submit a self-assessment by 31st January 2025.</p>
+            </li>
+            <li>
+                <b>...but you don't need to wait right up until the deadline, you can submit any time <em>after</em> 5th April</b>
+                <p>It's up to you to manage your own admin and deadlines, but you don't need to wait up until the last moment to file your tax return. Crucially, this also leaves you plenty of time to ensure you can meet the actual payment deadlines.</p>
+            </li>
+            <li>
+                <b>Watch out for Payment On Account!</b>
+                <p>This can trip a lot of people up, especially the first time it is needed! If your tax bill is over £1,000, you may need to make a Payment On Account (PoA). This is where HMRC will ask you to pay portions of your next year's tax bill <em>in advance</em>.
+                    You'll need to pay 50% of the amount of your previous year's bill by 31st January (on top of the previous year's bill) and then another 50% of that amount by 31st July. Essentially, it is assumed that your tax bill for the next year will be the same, and you're being asked to pay in advance.
+                    any difference between what you have paid for the following year compared to your PoA will then be settled at the end.</p>
+                <p>This means that you <b>need to budget ahead and assume that you'll pay an extra 50% of your current tax bill at 31st January and then at 31st July</b>. Long-term, these PoA will cancel out but just plan for it when you first reach the £1,000 threshold.</p>
+            </li>
+        </ol>
+
+        <!--
+        <p>
+            It's still worth understanding how your payslip works, and importantly
+            if you have any other sources of income, or change jobs or decide to work for yourself during the year it's important to understand how the tax you've paid so far is calculated.
+        </p>
+        -->
+
+        <hr>
+
+        <h2>What's on my payslip?</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <b>Gross pay</b>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        This is the total amount you are being paid by your employer - this is the same thing as your salary (albeit split up by month).
+                        This is the number they likely quoted to you when you accepted the job! However, the important bit is that this isn't actually the number that hits your bank account.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <b>Income tax deductions</b>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        This is the amount of income tax you need to pay. The important bit to remember is that this is calculated based upon your current income
+                        extrapolated out <em>for the entire year</em>. This means that if working for 12 months means you would pay tax at a different rate, but you end up only working for 6 months,
+                        then the tax is taken out now at the <em>higher rate</em>.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <b>Employee NIC deductions</b>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        This is the amount of National Insurance contributions you have to pay as an employee. You don't need to know the small differences between NICs and Tax,
+                        but the simplest way to look at it is that it is like an extra tax you pay on top of income tax. So whilst base rate income tax is 20%, the base rate NICs is 12%, so the lowest rate of actual
+                        tax you're paying is closer to 32% rather than 20% when you think about your employment income.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <b>Student loan deductions</b>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Do you have a student loan? Then this is where this is paid off! The amount you pay will be dependent upon your type of loan (size/when you took it out/which plan you took).
+                        This is taken out of your payslip here, but please bear in mind it is the Student Loans Company rather than HMRC than manage your total balance.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <b>Taxable benefits</b>
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        This one can be a bit of a surprise, but some benefits that your employer gives you for free, you actually need to pay tax on!
+                        This is in place to stop your employer effectively paying you in food/gifts/cars etc. rather than cash to avoid you paying tax! The likely tax benefits will be medical insurance provided by your employer, and a company car if you have that.
+                        However, it will depend upon the employee benefits your employer offers and what the relevant treatment is for that.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <b>Pension contributions</b>
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        This will be any pension contributions you make. The important things with pension contributions is that these come out of your pre-tax income or your <em>Gross pay</em>
+                        as we talked about earlier. So one of the key advantages of saving into your pension is that you actually wind up putting more of your money in, than if you take it out of your post-tax income (where you have paid tax) and put it in a savings account.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        <b>Net pay</b>
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        At the bottom of your payslip you'll have this, effectively your Gross pay, minus all of the other points above. This will be the <em>actual number that hits your bank account</em>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>Your payslip will also have a number of other key identifying details, such as your National Insurance number and your tax code. HMRC use these to track how much tax you'll be charged</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
