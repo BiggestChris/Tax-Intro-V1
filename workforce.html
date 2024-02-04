@@ -79,7 +79,7 @@
                 <h2>Thank you!</h2>
                 <p>Given your answers, here are the resources that will help you:</p>
                 <ul>
-                    ${questions.map((question, index) => `<li>${question.question}: <link href=${question.hyperlink}>${answers[index]}</link></li>`).join('')}
+                    ${questions.map((question, index) => `<li>${question.question}: <a href=${question.hyperlink}>${answers[index]}</a></li>`).join('')}
                 </ul>
             `;
             resultContainer.style.display = 'block';
