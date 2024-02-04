@@ -27,9 +27,9 @@
 
     <script>
         var questions = [
-            { question: "Are you going to be employed by a company?", options: ["Yes","No","Don't know"] },
-            { question: "Will you do any work for yourself?", options: ["Yes","No","Don't know"] },
-            { question: "Do you intend to do any savings or investments?", options: ["Yes","No","Don't know"] }
+            { question: "Are you going to be employed by a company?", options: ["Yes","No","Don't know"], hyperlink: "employee.html" },
+            { question: "Will you do any work for yourself?", options: ["Yes","No","Don't know"], hyperlink: "selfemployed.html" },
+            { question: "Do you intend to do any savings or investments?", options: ["Yes","No","Don't know"], hyperlink: "whoops.html" }
             // Add more questions here
         ];
 
@@ -37,7 +37,11 @@
 
         var currentQuestionIndex = 0;
 
-    
+        const resources = {
+            employment: "employee.html",
+            selfEmployment: "selfemployed.html",
+            savingsAndInvestments: "savingsandinvestments.html"
+        }
 
         displayQuestion();
 
@@ -73,9 +77,9 @@
             var resultContainer = document.getElementById('result');
             resultContainer.innerHTML = `
                 <h2>Thank you!</h2>
-                <p>Here are your answers:</p>
+                <p>Given your answers, here are the resources that will help you:</p>
                 <ul>
-                    ${questions.map((question, index) => `<li>${question.question}: ${answers[index]}</li>`).join('')}
+                    ${questions.map((question, index) => `<li>${question.question}: <link href=${question.hyperlink}>${answers[index]}</link></li>`).join('')}
                 </ul>
             `;
             resultContainer.style.display = 'block';
