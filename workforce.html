@@ -27,9 +27,9 @@
 
     <script>
         var questions = [
-            { question: "Are you going to be employed by a company?", options: ["Yes","No","Don't know"], hyperlink: "employee.html" },
-            { question: "Will you do any work for yourself?", options: ["Yes","No","Don't know"], hyperlink: "selfemployed.html" },
-            { question: "Do you intend to do any savings or investments?", options: ["Yes","No","Don't know"], hyperlink: "whoops.html" }
+            { question: "Are you going to be employed by a company?", options: ["Yes","No","Don't know"], quote: "What you need to know about being an employee", hyperlink: "employee.html" },
+            { question: "Will you do any work for yourself?", options: ["Yes","No","Don't know"], quote: "What you need to know about self-employed income", hyperlink: "selfemployed.html" },
+            { question: "Do you intend to do any savings or investments?", options: ["Yes","No","Don't know"], quote: "What you need to know about savings and investments (coming soon)", hyperlink: "whoops.html" }
             // Add more questions here
         ];
 
@@ -83,10 +83,10 @@
                         // Check if the answer is "yes" or "don't know"
                         if (answers[index] === "Yes" || answers[index] === "Don't know") {
                             // Include the hyperlink if the condition is met
-                            return `<li><p>${question.question}: ${answers[index]}</p><p><a href=${question.hyperlink} target="_blank">Find out more about being</a></p></li>`;
+                            return `<li><p>${question.question}: <em>${answers[index]}</em></p><p><a href=${question.hyperlink} target="_blank">${question.quote}</a></p></li>`;
                         } else {
                             // Otherwise, don't include the hyperlink
-                            return `<li><p>${question.question}: ${answers[index]}</p></li>`;
+                            return `<li><p>${question.question}: <em>${answers[index]}</em></p></li>`;
                         }
                     }).join('')}
                 </ul>
